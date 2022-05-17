@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Tracker</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class = "navbar">
+        <div class = "container fixed" >
+{#          /   duce la home #}
+            <a href="/" class = "navbar brand">
+                HOME
+            </a>
+        </div>
+
+    </nav>
+    <div class = "container fixed">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+</body>
+</html>
