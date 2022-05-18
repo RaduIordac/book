@@ -1,13 +1,36 @@
 {% extends "base.html" %}
 
-{% block content %}
-    {% for book in context_books %}
-        <tr>
+{% block style%}
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
 
-        {{ book.title }} -- {{ book.description }} --
-
-
-        </tr>
-        <br>
-    {% endfor%}
 {% endblock %}
+
+{% block content %}
+{% for book in context_books %}
+
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="http://placeimg.com/640/360/any" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{ book.title }}</h5>
+        <p class="card-text">{{book.description |slice:20}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+
+
+{#{% block content %}#}
+{#    {% for book in context_books %}#}
+{#        <tr>#}
+{##}
+{#        {{ book.title }} -- {{ book.description }} --#}
+{##}
+{##}
+{#        </tr>#}
+{#        <br>#}
+{#    {% endfor%}#}
+{#{% endblock %}#}
