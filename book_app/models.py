@@ -6,6 +6,9 @@ from django.db import models
 class Genre(models.Model):
     name = models.CharField(max_length=200)
 
+    # def __str__(self):
+    #     f"{self.name[]}"
+
 
 class Author(models.Model):
     first_name = models.CharField(max_length=50)
@@ -19,10 +22,10 @@ class Book(models.Model):
         ONGOING = 3
 
     title = models.CharField(max_length=200)
-    author = models.ManyToManyField(Author)
+    authors = models.ManyToManyField(Author)
     genre = models.ForeignKey(Genre, on_delete=models.DO_NOTHING)
-    numbers_of_pages = models.IntegerField
-    description = models.TextField
+    numbers_of_pages = models.IntegerField()
+    description = models.TextField()
     published = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
     state = models.IntegerField(choices=State.choices)

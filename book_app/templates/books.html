@@ -2,6 +2,12 @@
 
 {% block content %}
     {% for book in context_books %}
-        <p> book.ID </p>
+        <tr>
+
+        {{ book.title }} -- {{ book.description }} --
+
+
+        </tr>
+        <br>
     {% endfor%}
 {% endblock %}
