@@ -7,19 +7,30 @@
 
 {% endblock %}
 
+
+
 {% block content %}
+
+    <a href="{% url 'create_book' %}" class="btn btn-primary">Create Books</a>
+    <br>
+    <br>
+    <br>
+
 {% for book in context_books %}
 
 <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="http://placeimg.com/640/360/any" alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title">{{ book.title }}</h5>
+        <h5 class="card-title">{{ book.title }} Author: {{ book.authors.all.0.first_name }} {{ book.authors.all.0.last_name }}</h5>
         <p class="card-text">{{book.description |slice:20}}</p>
         <a href="#" class="btn btn-primary">Go somewhere</a>
+
     </div>
 </div>
 {% endfor %}
 {% endblock %}
+
+
 
 
 

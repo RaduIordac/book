@@ -9,10 +9,17 @@ class BookForm(forms.ModelForm):
         model = Book
         # fields = "__all__"
         exclude=("authors",)
+    title = forms.CharField(widget=forms.TextInput(
+        attrs={
+        'class':'form-control',
+        'placeholder':'Title'
+        }
+    ))
+    #crispyforms librarie stilizari clase python
 
     def clean_title(self):
         if self.cleaned_data["title"].islower():
-            raise ValidationError("Use Capitalized titele")
+            raise ValidationError("Use Capitalized title")
         return self.cleaned_data["title"]
 
 class AuthorForm(forms.ModelForm):
@@ -20,3 +27,4 @@ class AuthorForm(forms.ModelForm):
         model = Author
         fields = "__all__"
     first_name = forms.CharField(label = "Author first name")
+

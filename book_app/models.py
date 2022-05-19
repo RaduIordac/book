@@ -14,6 +14,9 @@ class Author(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
 
+    def __str__(self):
+        return f" First name : {self.first_name}, Last name : {self.last_name}"
+
 
 class Book(models.Model):
     class State(models.IntegerChoices):
