@@ -68,8 +68,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'books' %}">Books</a>
             </ul>
-            <form class="d-flex" id="search-form">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" id="search-form" method="get" action="{% url 'books' %}">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name ="search" value="{{search_text}}">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>

@@ -12,9 +12,24 @@ class BookForm(forms.ModelForm):
     title = forms.CharField(widget=forms.TextInput(
         attrs={
         'class':'form-control',
-        'placeholder':'Title'
+        'placeholder':'Title here:'
         }
     ))
+    description = forms.CharField(widget=forms.Textarea(
+        attrs={
+        'class':'form-control',
+        'placeholder':'Description here:'
+        }
+    ))
+    state = forms.ChoiceField(choices=Book.State.choices , widget=forms.Select(
+        attrs={
+            'class': 'custom-select',
+            'placeholder': 'Choose state:'
+        }
+    ))
+
+
+
     #crispyforms librarie stilizari clase python
 
     def clean_title(self):

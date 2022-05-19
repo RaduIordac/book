@@ -12,7 +12,12 @@ def home_view(request):
     return render(request, template_name='home.html')
 
 def show_books_view(request):
-    return render(request, template_name= "books.html", context={"context_books" : Book.objects.all()})
+    books = Book.objects.all()
+    search_text = request.GET.get("search", "")
+    if search_text:
+        books = books.filter(title__contains=search_text)
+
+    return render(request, template_name= "books.html", context={"context_books" : books, "search_text": search_text},)
 
 def create_book(request):
     if request.method == "GET":

@@ -9,8 +9,16 @@
         {{ form.title.errors }}
         <label for = "{{ form.title.id_for_label }}">  Title:       </label>
         {{ form.title }}
-
-
+    </div>
+     <div class = "form-group">
+        {{ form.description.errors }}
+        <label for = "{{ form.description.id_for_label }}">  Description:       </label>
+        {{ form.description }}
+    </div>
+    <div class = "form-group">
+        {{ form.state.errors }}
+        <label for = "{{ form.state.id_for_label }}">  Choose state:       </label>
+        {{form.state}}
     </div>
     <br>
     <br>
